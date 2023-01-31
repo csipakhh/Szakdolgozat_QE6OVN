@@ -37,7 +37,7 @@ mysqli_close($conn);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
-    <title>Document</title>
+    <title>Szakdolgozat</title>
 </head>
 <body>
     <header>
@@ -123,8 +123,8 @@ mysqli_close($conn);
         <h1>Bejelentkezés</h1>
 
         <form action="">
-            <input type="text" name="" id="login_felhasznalonev" placeholder="Felhasználónév">
-            <input type="text" name="" id="login_jelszo" placeholder="Jelszó">
+            <input type="text" name="" id="login_felhasznalonev" placeholder="Felhasználónév" required>
+            <input type="password" name="" id="login_jelszo" placeholder="Jelszó" required>
             <input type="submit" value="Bejelentkezés">
         </form>
     </div>
