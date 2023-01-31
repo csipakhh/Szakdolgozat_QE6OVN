@@ -15,22 +15,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Check if the file was uploaded
 
   
-            // Insert the file content into the database
-            $sql = "INSERT INTO szakember (vezeteknev, keresztnev, felhasznalonev, email, jelszo, szakma, helyszin)
-        VALUES ('$vezeteknev', '$keresztnev', '$felhasznalonev', '$email', '$jelszo', '$szakma', '$helyszin')";
+        // Insert the file content into the database
+        $sql = "INSERT INTO szakember (vezeteknev, keresztnev, felhasznalonev, email, jelszo, jelszo_ujra, szakma, helyszin)
+        VALUES ('$vezeteknev', '$keresztnev', '$felhasznalonev', '$email', '$jelszo', '$jelszo_ujra', '$szakma', '$helyszin')";
 if (mysqli_query($conn, $sql)) {
     //echo "Sikeres regisztráció!";
 } else {
     echo "Sikertelen regisztráció: " . mysqli_error($conn);
 }
 mysqli_close($conn);
-
 }
 
 
     
 
-    ?>
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -55,7 +54,6 @@ mysqli_close($conn);
         </nav>
     </header>
 
-
     <main>
         <h1>Szakemberkereső</h1>
         <p>Oldalunkon minden szakmában megtalálhatóak a legjobb szakemberek, így biztosan megtalálja a megfelelő szakembert a projektjéhez. Minden szakemberünk minősített és tapasztalt, így biztos lehet benne, hogy a munkájukat profi módon végzik el. A weboldalunkon találhatóak az árak és referencia munkák, így egyszerűen összehasonlíthatja a szakembereket és dönthet a legjobb ajánlatról. Az általunk kínált szolgáltatásunk segítségével biztos lehet benne, hogy a munkáját megbízható szakemberek végzik el.</p>
@@ -70,12 +68,9 @@ mysqli_close($conn);
         <img src="pictures/19318.jpg" alt="" id="kep">
     </aside>
 
-
-
     <footer>
         <p>© Danicsipak Norbert</p>
     </footer>
-
 
     <div id="reg">
         <img src="pictures/x.png" alt="" id="x">
@@ -88,8 +83,6 @@ mysqli_close($conn);
             <input type="text" name="email" id="email" placeholder="Email cím" required>
             <input type="password" name="jelszo" id="jelszo" placeholder="Jelszó" required>
             <input type="password" name="jelszo_ujra" id="jelszo_ujra" placeholder="Jelszó újra" required>
-
-
 
             <select id="szakma" name="szakma" required>
                 <option value="" disabled>Szakmák</option>
